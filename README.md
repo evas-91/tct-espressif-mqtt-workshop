@@ -34,10 +34,10 @@ Esta é a essência desta etapa — três mudanças no código que habilitam TLS
 **`settings.h`** — URI atualizada:
 ```cpp
 // Antes (step/01):
-#define MQTT_BROKER_URI    "mqtt://ec2-3-80-250-87.compute-1.amazonaws.com:1883"
+#define MQTT_BROKER_URI    "mqtt://ec2-3-82-3-181.compute-1.amazonaws.com:1883"
 
 // Agora (step/02):
-#define MQTT_BROKER_URI    "mqtts://ec2-3-80-250-87.compute-1.amazonaws.com:8883"
+#define MQTT_BROKER_URI    "mqtts://ec2-3-82-3-181.compute-1.amazonaws.com:8883"
 ```
 
 **`main.cpp`** — certificado embedado no firmware:
@@ -74,14 +74,14 @@ mqtt5_cfg.broker.verification.certificate = (const char *)certificate;
 ```
 
 **Broker:** EMQX rodando em instância AWS EC2  
-**Endereço:** `ec2-3-80-250-87.compute-1.amazonaws.com`  
+**Endereço:** `ec2-3-82-3-181.compute-1.amazonaws.com`  
 **Porta:** `8883` (com TLS)  
 **Certificado:** `selfsigned_techday_rootCA.pem` — embedado no firmware  (pode ser encontrado na pasta `main/`)
 **Cliente de monitoramento:** MQTTX Desktop
 
 ### Dashboard EMQX
 
-**URL:** [http://ec2-3-80-250-87.compute-1.amazonaws.com:18083/#/dashboard/overview](http://ec2-3-80-250-87.compute-1.amazonaws.com:18083/#/dashboard/overview)
+**URL:** [http://ec2-3-82-3-181.compute-1.amazonaws.com:18083/#/dashboard/overview](http://ec2-3-82-3-181.compute-1.amazonaws.com:18083/#/dashboard/overview)
 
 | Campo | Valor |
 |---|---|
@@ -140,14 +140,14 @@ countryName = BR
 stateOrProvinceName = São Paulo
 localityName = São Paulo
 organizationName = TCT
-commonName = ec2-3-80-250-87.compute-1.amazonaws.com
+commonName = ec2-3-82-3-181.compute-1.amazonaws.com
 [req_ext]
 subjectAltName = @alt_names
 [v3_req]
 subjectAltName = @alt_names
 [alt_names]
 IP.1 = 3.80.250.87
-DNS.1 = ec2-3-80-250-87.compute-1.amazonaws.com
+DNS.1 = ec2-3-82-3-181.compute-1.amazonaws.com
 ```
 
 ```bash
@@ -181,7 +181,7 @@ git checkout step/02-mqtt-tls
 Abra o arquivo `main/settings.h` e atualize a URI:
 
 ```cpp
-#define MQTT_BROKER_URI    "mqtts://ec2-3-80-250-87.compute-1.amazonaws.com:8883"
+#define MQTT_BROKER_URI    "mqtts://ec2-3-82-3-181.compute-1.amazonaws.com:8883"
 ```
 
 As credenciais Wi-Fi já estão preenchidas do step anterior — nenhuma outra alteração é necessária.
@@ -218,7 +218,7 @@ Selecione a porta serial correta na barra inferior do VSCode (ícone de tomada),
 Você deve ver no terminal uma sequência semelhante a:
 
 ```
-I (xxxx) MY_MQTT: Inicializando MQTT...mqtts://ec2-3-80-250-87.compute-1.amazonaws.com:8883
+I (xxxx) MY_MQTT: Inicializando MQTT...mqtts://ec2-3-82-3-181.compute-1.amazonaws.com:8883
 I (xxxx) esp-tls: handshake successful
 I (xxxx) MY_MQTT: Conectado ao broker MQTT.
 I (xxxx) MAIN: Inscrito no tópico: /techday/A1B2C3D4E5F6/commands/
@@ -234,7 +234,7 @@ Crie uma nova conexão no MQTTX apontando para a porta `8883`:
 
 | Campo | Valor |
 |---|---|
-| Host | `mqtts://ec2-3-80-250-87.compute-1.amazonaws.com` |
+| Host | `mqtts://ec2-3-82-3-181.compute-1.amazonaws.com` |
 | Porta | `8883` |
 | SSL/TLS | habilitado |
 | CA File | disponivel na pasta docs/ |
