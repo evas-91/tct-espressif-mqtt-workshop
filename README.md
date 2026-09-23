@@ -40,7 +40,7 @@ Nesta primeira etapa do workshop, vamos estabelecer uma conexão MQTT básica en
 ```
 
 **Broker:** EMQX rodando em instância AWS EC2  
-**Endereço:** `ec2-3-80-250-87.compute-1.amazonaws.com`  
+**Endereço:** `ec2-3-82-3-181.compute-1.amazonaws.com`  
 **Porta:** `1883` (sem TLS)  
 **Cliente de monitoramento:** MQTTX Desktop
 
@@ -48,7 +48,7 @@ Nesta primeira etapa do workshop, vamos estabelecer uma conexão MQTT básica en
 
 Acesse o dashboard do broker para monitorar conexões e mensagens em tempo real:
 
-**URL:** [http://ec2-3-80-250-87.compute-1.amazonaws.com:18083/](http://ec2-3-80-250-87.compute-1.amazonaws.com:18083/)
+**URL:** [http://ec2-3-82-3-181.compute-1.amazonaws.com:18083/](http://ec2-3-82-3-181.compute-1.amazonaws.com:18083/)
 
 | Campo | Valor |
 |---|---|
@@ -85,7 +85,7 @@ Abra o arquivo `main/settings.h` e preencha as definições abaixo:
 
 ```cpp
 // URI do broker MQTT
-#define MQTT_BROKER_URI         "mqtt://ec2-3-80-250-87.compute-1.amazonaws.com:1883"
+#define MQTT_BROKER_URI         "mqtt://ec2-3-82-3-181.compute-1.amazonaws.com:1883"
 
 // Credenciais Wi-Fi
 #define PRE_CONFIGURED_WIFI_SSID        "nome-da-rede"
@@ -138,7 +138,7 @@ I (xxxx) app: Estação Wi-Fi iniciada
 I (xxxx) app: IP obtido: 192.168.x.x
 W (xxxx) app: Wi-Fi conectado! Iniciando MQTT...
 I (xxxx) app: Device ID (MAC): A1B2C3D4E5F6
-I (xxxx) MY_MQTT: Inicializando MQTT...mqtt://ec2-3-80-250-87.compute-1.amazonaws.com:1883
+I (xxxx) MY_MQTT: Inicializando MQTT...mqtt://ec2-3-82-3-181.compute-1.amazonaws.com:1883
 I (xxxx) MY_MQTT: Conectado ao broker MQTT.
 I (xxxx) MAIN: Inscrito no tópico: /techday/A1B2C3D4E5F6/commands/
 ```
@@ -153,7 +153,7 @@ Abra o MQTTX Desktop e crie uma nova conexão:
 
 | Campo | Valor |
 |---|---|
-| Host | `mqtt://ec2-3-80-250-87.compute-1.amazonaws.com` |
+| Host | `mqtt://ec2-3-82-3-181.compute-1.amazonaws.com` |
 | Porta | `1883` |
 | Client ID | qualquer nome (ex: `mqttx-monitor`) |
 
